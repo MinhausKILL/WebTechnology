@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Привет, пользователь!</title>
+  <script>
+    // Функция для запроса имени у пользователя и вывода его
+    function askNameAndGreet() {
+      // Запрос имени у пользователя с помощью prompt
+      var userName = prompt('Введите ваше имя:');
+
+      // Проверка, было ли введено имя
+      if (userName) {
+        // Вывод приветствия с использованием имени пользователя
+        alert('Привет, ' + userName + '!');
+      } else {
+        // Если пользователь не ввел имя, вывод сообщения об ошибке
+        alert('Вы не ввели имя. Пожалуйста, попробуйте еще раз.');
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- Вызов функции при загрузке страницы -->
+  <script>
+    askNameAndGreet();
+  </script>
+</body>
+</html>
