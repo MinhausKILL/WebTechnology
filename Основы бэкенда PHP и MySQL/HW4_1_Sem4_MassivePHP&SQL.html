@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Опыт работы</title>
+</head>
+<body>
+  <?php
+    // Массив с данными об опыте работы
+    $experience = [
+      [
+        'место работы' => 'Компания ABC',
+        'должность' => 'Веб-разработчик',
+        'годы' => '2018-2020',
+      ],
+      [
+        'место работы' => 'Компания XYZ',
+        'должность' => 'PHP-разработчик',
+        'годы' => '2021-настоящее время',
+      ],
+    ];
+
+    // Вывод данных из массива в HTML-шаблоне
+    echo '<h1>Опыт работы</h1>';
+    echo '<ul>';
+    foreach ($experience as $job) {
+      echo '<li>';
+      echo '<strong>' . $job['место работы'] . '</strong><br>';
+      echo 'Должность: ' . $job['должность'] . '<br>';
+      echo 'Годы работы: ' . $job['годы'];
+      echo '</li>';
+    }
+    echo '</ul>';
+  ?>
+</body>
+</html>

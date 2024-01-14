@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Студенты</title>
+</head>
+<body>
+
+<?php
+$servername = "localhost";
+$username = "Павел Малык";
+$password = "ЫФЧФВФвф2024";
+$dbname = "mydatabase";
+
+// Подключение к базе данных
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Проверка подключения
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// SQL-запрос для выбора данных из таблицы
+$sql = "SELECT id, name, age, address FROM students";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // Вывод данных в виде таблицы HTML
+    echo "<table border='1'><tr><th>ID</th><th>Name</th><th>Age</th><th>Address</th></tr>";
+    while($row = $result->fetch_assoc()) {
+        echo "<tr><td>".$row["id"]."</td><td>".$row["name"]."</td><td>".$row["age"]."</td><td>".$row["address"]."</td></tr>";
+    }
+    echo "</table>";
+} else {
+    echo "0 results";
+}
+
+// Закрытие соединения с базой данных
+$conn->close();
+?>
+
+</body>
+</html>
